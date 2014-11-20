@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58D1A0721A1E8F060029B871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A0711A1E8F060029B871 /* AppDelegate.m */; };
+		58D1A0741A1E8F060029B871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A0731A1E8F060029B871 /* main.m */; };
+		58D1A0761A1E8F060029B871 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A0751A1E8F060029B871 /* Images.xcassets */; };
+		58D1A0791A1E8F060029B871 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A0771A1E8F060029B871 /* MainMenu.xib */; };
+		58D1A0851A1E8F060029B871 /* Sermon_CountdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A0841A1E8F060029B871 /* Sermon_CountdownTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58D1A07F1A1E8F060029B871 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58D1A0631A1E8F060029B871 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58D1A06A1A1E8F060029B871;
+			remoteInfo = "Sermon Countdown";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58D1A06B1A1E8F060029B871 /* Sermon Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sermon Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D1A06F1A1E8F060029B871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D1A0701A1E8F060029B871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58D1A0711A1E8F060029B871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58D1A0731A1E8F060029B871 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58D1A0751A1E8F060029B871 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		58D1A0781A1E8F060029B871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		58D1A07E1A1E8F060029B871 /* Sermon CountdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sermon CountdownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D1A0831A1E8F060029B871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D1A0841A1E8F060029B871 /* Sermon_CountdownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sermon_CountdownTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58D1A0681A1E8F060029B871 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D1A07B1A1E8F060029B871 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58D1A0621A1E8F060029B871 = {
+			isa = PBXGroup;
+			children = (
+				58D1A06D1A1E8F060029B871 /* Sermon Countdown */,
+				58D1A0811A1E8F060029B871 /* Sermon CountdownTests */,
+				58D1A06C1A1E8F060029B871 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58D1A06C1A1E8F060029B871 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A06B1A1E8F060029B871 /* Sermon Countdown.app */,
+				58D1A07E1A1E8F060029B871 /* Sermon CountdownTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58D1A06D1A1E8F060029B871 /* Sermon Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A0701A1E8F060029B871 /* AppDelegate.h */,
+				58D1A0711A1E8F060029B871 /* AppDelegate.m */,
+				58D1A0751A1E8F060029B871 /* Images.xcassets */,
+				58D1A0771A1E8F060029B871 /* MainMenu.xib */,
+				58D1A06E1A1E8F060029B871 /* Supporting Files */,
+			);
+			path = "Sermon Countdown";
+			sourceTree = "<group>";
+		};
+		58D1A06E1A1E8F060029B871 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A06F1A1E8F060029B871 /* Info.plist */,
+				58D1A0731A1E8F060029B871 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58D1A0811A1E8F060029B871 /* Sermon CountdownTests */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A0841A1E8F060029B871 /* Sermon_CountdownTests.m */,
+				58D1A0821A1E8F060029B871 /* Supporting Files */,
+			);
+			path = "Sermon CountdownTests";
+			sourceTree = "<group>";
+		};
+		58D1A0821A1E8F060029B871 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58D1A0831A1E8F060029B871 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58D1A06A1A1E8F060029B871 /* Sermon Countdown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D1A0881A1E8F060029B871 /* Build configuration list for PBXNativeTarget "Sermon Countdown" */;
+			buildPhases = (
+				58D1A0671A1E8F060029B871 /* Sources */,
+				58D1A0681A1E8F060029B871 /* Frameworks */,
+				58D1A0691A1E8F060029B871 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sermon Countdown";
+			productName = "Sermon Countdown";
+			productReference = 58D1A06B1A1E8F060029B871 /* Sermon Countdown.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58D1A07D1A1E8F060029B871 /* Sermon CountdownTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D1A08B1A1E8F060029B871 /* Build configuration list for PBXNativeTarget "Sermon CountdownTests" */;
+			buildPhases = (
+				58D1A07A1A1E8F060029B871 /* Sources */,
+				58D1A07B1A1E8F060029B871 /* Frameworks */,
+				58D1A07C1A1E8F060029B871 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58D1A0801A1E8F060029B871 /* PBXTargetDependency */,
+			);
+			name = "Sermon CountdownTests";
+			productName = "Sermon CountdownTests";
+			productReference = 58D1A07E1A1E8F060029B871 /* Sermon CountdownTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58D1A0631A1E8F060029B871 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Worship Kit";
+				TargetAttributes = {
+					58D1A06A1A1E8F060029B871 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					58D1A07D1A1E8F060029B871 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 58D1A06A1A1E8F060029B871;
+					};
+				};
+			};
+			buildConfigurationList = 58D1A0661A1E8F060029B871 /* Build configuration list for PBXProject "Sermon Countdown" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58D1A0621A1E8F060029B871;
+			productRefGroup = 58D1A06C1A1E8F060029B871 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58D1A06A1A1E8F060029B871 /* Sermon Countdown */,
+				58D1A07D1A1E8F060029B871 /* Sermon CountdownTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58D1A0691A1E8F060029B871 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D1A0761A1E8F060029B871 /* Images.xcassets in Resources */,
+				58D1A0791A1E8F060029B871 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D1A07C1A1E8F060029B871 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58D1A0671A1E8F060029B871 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D1A0741A1E8F060029B871 /* main.m in Sources */,
+				58D1A0721A1E8F060029B871 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58D1A07A1A1E8F060029B871 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D1A0851A1E8F060029B871 /* Sermon_CountdownTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58D1A0801A1E8F060029B871 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58D1A06A1A1E8F060029B871 /* Sermon Countdown */;
+			targetProxy = 58D1A07F1A1E8F060029B871 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58D1A0771A1E8F060029B871 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58D1A0781A1E8F060029B871 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58D1A0861A1E8F060029B871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		58D1A0871A1E8F060029B871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		58D1A0891A1E8F060029B871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Sermon Countdown/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		58D1A08A1A1E8F060029B871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Sermon Countdown/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		58D1A08C1A1E8F060029B871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sermon CountdownTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sermon Countdown.app/Contents/MacOS/Sermon Countdown";
+			};
+			name = Debug;
+		};
+		58D1A08D1A1E8F060029B871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sermon CountdownTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sermon Countdown.app/Contents/MacOS/Sermon Countdown";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58D1A0661A1E8F060029B871 /* Build configuration list for PBXProject "Sermon Countdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D1A0861A1E8F060029B871 /* Debug */,
+				58D1A0871A1E8F060029B871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D1A0881A1E8F060029B871 /* Build configuration list for PBXNativeTarget "Sermon Countdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D1A0891A1E8F060029B871 /* Debug */,
+				58D1A08A1A1E8F060029B871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		58D1A08B1A1E8F060029B871 /* Build configuration list for PBXNativeTarget "Sermon CountdownTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D1A08C1A1E8F060029B871 /* Debug */,
+				58D1A08D1A1E8F060029B871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58D1A0631A1E8F060029B871 /* Project object */;
+}
