@@ -12,6 +12,7 @@
 		58D1A0761A1E8F060029B871 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A0751A1E8F060029B871 /* Images.xcassets */; };
 		58D1A0791A1E8F060029B871 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D1A0771A1E8F060029B871 /* MainMenu.xib */; };
 		58D1A0851A1E8F060029B871 /* Sermon_CountdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A0841A1E8F060029B871 /* Sermon_CountdownTests.m */; };
+		58D1A0921A1E96F70029B871 /* JTOutputWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1A0911A1E96F70029B871 /* JTOutputWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		58D1A07E1A1E8F060029B871 /* Sermon CountdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sermon CountdownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D1A0831A1E8F060029B871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D1A0841A1E8F060029B871 /* Sermon_CountdownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sermon_CountdownTests.m; sourceTree = "<group>"; };
+		58D1A0901A1E96F70029B871 /* JTOutputWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTOutputWindow.h; sourceTree = "<group>"; };
+		58D1A0911A1E96F70029B871 /* JTOutputWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTOutputWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				58D1A0711A1E8F060029B871 /* AppDelegate.m */,
 				58D1A0751A1E8F060029B871 /* Images.xcassets */,
 				58D1A0771A1E8F060029B871 /* MainMenu.xib */,
+				58D1A0901A1E96F70029B871 /* JTOutputWindow.h */,
+				58D1A0911A1E96F70029B871 /* JTOutputWindow.m */,
 				58D1A06E1A1E8F060029B871 /* Supporting Files */,
 			);
 			path = "Sermon Countdown";
@@ -160,6 +165,7 @@
 				TargetAttributes = {
 					58D1A06A1A1E8F060029B871 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 88G66A5273;
 					};
 					58D1A07D1A1E8F060029B871 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D1A0741A1E8F060029B871 /* main.m in Sources */,
+				58D1A0921A1E96F70029B871 /* JTOutputWindow.m in Sources */,
 				58D1A0721A1E8F060029B871 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Sermon Countdown/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -336,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Sermon Countdown/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -398,6 +407,7 @@
 				58D1A08A1A1E8F060029B871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58D1A08B1A1E8F060029B871 /* Build configuration list for PBXNativeTarget "Sermon CountdownTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +416,7 @@
 				58D1A08D1A1E8F060029B871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

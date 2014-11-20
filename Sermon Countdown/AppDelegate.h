@@ -9,7 +9,18 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+    
+}
 
+@property (nonatomic, assign) IBOutlet NSMenu * statusMenu;
+@property (nonatomic, assign) IBOutlet NSWindow * settingsWindow;
+
+- (IBAction)startCountdown:(id)sender;
+
+- (IBAction)showSettings:(id)sender;
+- (IBAction)quitPager:(id)sender;
 
 @end
 
+static NSString * WKOutputScreenChangedNotification = @"WKOutputScreenChanged";
