@@ -16,6 +16,9 @@
 @property (nonatomic, assign) IBOutlet NSMenu * statusMenu;
 @property (nonatomic, assign) IBOutlet NSWindow * settingsWindow;
 
+@property (nonatomic, strong) NSArray * displayTitles;
+@property (nonatomic, assign) NSInteger selectedDisplayIndex;
+
 - (IBAction)startCountdown:(id)sender;
 
 - (IBAction)showSettings:(id)sender;
