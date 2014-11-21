@@ -39,12 +39,6 @@
     self.outputString = @"";
     
     [self _updateScreens];
-    /*
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-    [statusItem setHighlightMode:YES];
-    [statusItem setImage:[NSImage imageNamed:NSImageNameActionTemplate]];
-    [statusItem setMenu:_statusMenu];
-    */
 }
 
 - (NSString *)_countdownStringForSeconds:(NSInteger)seconds
