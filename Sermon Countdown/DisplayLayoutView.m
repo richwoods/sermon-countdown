@@ -31,7 +31,7 @@
 	self = [super initWithFrame:frameRect];
 	if (self) {
 		_imageView = [[NSImageView alloc] initWithFrame:self.bounds];
-		_imageView.imageScaling = NSImageScaleProportionallyUpOrDown;
+		_imageView.imageScaling = NSImageScaleAxesIndependently;
 		[self addSubview:_imageView];
 		_imageView.autoresizingMask = NSViewWidthSizable|NSViewHeightSizable;
 
@@ -196,12 +196,13 @@
 		screenIndex++;
 	}
 
+//	CGFloat keyWidth = [self fullNormalizedActualPixelSizeOfScreens].size.width / [self screenDrawScaleRatio];
+//	CGFloat keyHeight = [self fullNormalizedActualPixelSizeOfScreens].size.height / [self screenDrawScaleRatio];
+//	[[NSBezierPath bezierPathWithRect:NSMakeRect((self.bounds.size.width - keyWidth) / 2, (self.bounds.size.height - keyHeight) / 2, keyWidth, keyHeight)] fill];
 }
 
 
-// ratio = width / height
-// if outer ratio > inner ratio, use height
-// if inner ratio > outer ratio, use width
+
 
 - (CGPoint)centerPoint
 {
@@ -282,13 +283,18 @@
 	return currentSize;
 }
 
+// ratio = width / height
+// if outer ratio > inner ratio, use height
+// if inner ratio > outer ratio, use width
+
 - (CGFloat)screenDrawScaleRatio
 {
-	CGSize currentSize = [self fullNormalizedActualPixelSizeOfScreens].size;
-	CGFloat viewScaleRatio = currentSize.width / (self.bounds.size.width - 20);
-	if ((currentSize.height / viewScaleRatio) > (self.bounds.size.height - 20))
+	CGFloat outerRatio = self.bounds.size.width / self.bounds.size.height;
+	CGFloat innerRatio = [self fullNormalizedActualPixelSizeOfScreens].size.width / [self fullNormalizedActualPixelSizeOfScreens].size.height;
+	CGFloat viewScaleRatio = [self fullNormalizedActualPixelSizeOfScreens].size.height / (self.bounds.size.height - 20);
+	if (innerRatio > outerRatio)
 	{
-		viewScaleRatio = currentSize.height / (self.bounds.size.height - 20);
+		viewScaleRatio = [self fullNormalizedActualPixelSizeOfScreens].size.width / (self.bounds.size.width - 20);
 	}
 
 	return viewScaleRatio;
