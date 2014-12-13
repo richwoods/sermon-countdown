@@ -8,8 +8,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface DisplayLayoutView : NSView
-{
-	NSMutableArray * displayPopups;
-}
 
 @end
