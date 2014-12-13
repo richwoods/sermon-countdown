@@ -17,7 +17,7 @@
 }
 
 @property (weak) IBOutlet NSWindow *window;
-@property (nonatomic, strong) JTOutputWindow * outputWindow;
+@property (nonatomic, strong) NSArray * outputWindows;
 @property (nonatomic, strong) NSTimer * outputTimer;
 
 @property (nonatomic, strong) NSString * outputString;
@@ -37,8 +37,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_updateScreens) name:NSApplicationDidChangeScreenParametersNotification object:nil];
 
     self.outputString = @"";
-
-	self.selectedDisplayIndex = 0;
 
     [self _updateScreens];
 }
@@ -80,9 +78,12 @@
         [_outputTimer invalidate];
         _outputTimer = nil;
         
-        [_outputWindow orderOut:nil];
-        _outputWindow = nil;
-        
+        for (JTOutputWindow * win in _outputWindows)
+		{
+			[win orderOut:nil];
+		}
+		_outputWindows = nil;
+
         [_window makeKeyAndOrderFront:nil];
         
         return;
@@ -102,7 +103,10 @@
 
 - (IBAction)toggleOutput:(NSButton *)sender
 {
-    _outputWindow.visible = !_outputWindow.visible;
+	for (JTOutputWindow * win in _outputWindows)
+	{
+		win.shouldDisplay = !win.shouldDisplay;
+	}
 }
 
 - (IBAction)quitPager:(id)sender
@@ -112,38 +116,55 @@
 
 - (void)_updateScreens
 {
-	if ([self.displayTitles count] != [[NSScreen screens] count])
-	{
-		NSMutableArray * newScreens = [NSMutableArray array];
-		NSInteger screenIndex = 0;
-		for (NSScreen * scr in [NSScreen screens])
-		{
-			[newScreens addObject:[NSString stringWithFormat:@"Screen %ld - %f by %f", (long)screenIndex, scr.frame.size.width, scr.frame.size.height]];
-			screenIndex++;
-		}
-		self.displayTitles = [NSArray arrayWithArray:newScreens];
-	}
-
-    if ([self.outputString length] < 1)
+	if ([self.outputString length] < 1)
     {
-        [_outputWindow orderOut:nil];
-        _outputWindow = nil;
-        
+        for (JTOutputWindow * win in _outputWindows)
+		{
+			[win orderOut:nil];
+		}
+
+		_outputWindows = nil;
+
         return;
     }
-    
-    if (!_outputWindow)
-    {
-        _outputWindow = [[JTOutputWindow alloc] initWithScreenIndex:self.selectedDisplayIndex];
-        _outputWindow.level = NSStatusWindowLevel + 2;
-        [_outputWindow setBackgroundColor:[NSColor clearColor]];
-        [_outputWindow setOpaque:NO];
-        [_outputWindow setHasShadow:NO];
-        [_outputWindow orderFront:nil];
-        [_outputWindow setFrame:[[[NSScreen screens] objectAtIndex:self.selectedDisplayIndex] frame] display:YES];
-    }
-    [_outputWindow setPayloadOutput:self.outputString];
-    
+
+	if ([_outputWindows count] != [[NSScreen screens] count])
+	{
+		for (JTOutputWindow * win in _outputWindows)
+		{
+			[win orderOut:nil];
+		}
+
+		NSMutableArray * newWindows = [NSMutableArray array];
+
+		for (NSInteger iterator = 0; iterator < [[NSScreen screens] count]; iterator++)
+		{
+			JTOutputWindow * window = [[JTOutputWindow alloc] initWithScreenIndex:iterator];
+			window.level = NSStatusWindowLevel + 2;
+			[window setBackgroundColor:[NSColor clearColor]];
+			[window setOpaque:NO];
+			[window setHasShadow:NO];
+			[window orderFront:nil];
+			[window setFrame:[[[NSScreen screens] objectAtIndex:iterator] frame] display:YES];
+			[window setPayloadOutput:self.outputString];
+			[newWindows addObject:window];
+		}
+
+		_outputWindows = [NSArray arrayWithArray:newWindows];
+	}
+	else
+	{
+		for (JTOutputWindow * win in _outputWindows)
+		{
+			if (!NSEqualRects(win.frame, [[[NSScreen screens] objectAtIndex:win.screenIndex] frame]))
+			{
+				[win setFrame:[[[NSScreen screens] objectAtIndex:win.screenIndex] frame] display:YES];
+			}
+
+			[win setPayloadOutput:self.outputString];
+		}
+	}
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

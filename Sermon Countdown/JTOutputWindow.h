@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+typedef enum {
+	kCountdownModeNone,
+	kCountdownModeStage,
+	kCountdownModeNormal
+} JTCountdownDisplayMode;
+
 @interface JTOutputWindow : NSWindow
 
 - (instancetype)initWithScreenIndex:(NSUInteger)screenIndex;
@@ -16,6 +22,6 @@
 
 @property (nonatomic, strong) NSString * payloadOutput;
 
-@property (nonatomic, assign) BOOL visible;
+@property (nonatomic, assign) BOOL shouldDisplay;
 
 @end

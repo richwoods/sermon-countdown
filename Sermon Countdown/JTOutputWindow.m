@@ -55,8 +55,8 @@ CGFloat fontSize = 45;
         _pagerTextLayer.alignmentMode = kCAAlignmentLeft;
 		_pagerTextLayer.opaque = NO;
 		_pagerTextLayer.backgroundColor = (__bridge CGColorRef)([NSColor clearColor]);
-		_pagerTextLayer.shadowColor = (__bridge CGColorRef)([NSColor blackColor]);
-		_pagerTextLayer.shadowOffset = CGSizeMake(1, 1);
+		_pagerTextLayer.shadowColor = [NSColor blackColor].CGColor;
+		_pagerTextLayer.shadowOffset = CGSizeMake(2, -2);
 		_pagerTextLayer.shadowOpacity = 1.0;
 		[[[self contentView] layer] addSublayer:_pagerTextLayer];
 
@@ -78,6 +78,25 @@ CGFloat fontSize = 45;
 	return self;
 }
 
+- (JTCountdownDisplayMode)_displayMode
+{
+	NSInteger modeIndex = [[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)_screenIndex]] integerValue];
+
+	switch (modeIndex) {
+		case 1:
+			return kCountdownModeStage;
+			break;
+		case 2:
+			return kCountdownModeNormal;
+			break;
+
+		default:
+			break;
+	}
+
+	return kCountdownModeNone;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"text_output_tint"])
@@ -94,9 +113,9 @@ CGFloat fontSize = 45;
     [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"text_output_tint"];
 }
 
-- (void)setVisible:(BOOL)visible
+- (void)setShouldDisplay:(BOOL)shouldDisplay
 {
-	_pagerTextLayer.hidden = !visible;
+	_pagerTextLayer.hidden = !shouldDisplay;
 }
 
 - (BOOL)visible
@@ -113,21 +132,38 @@ CGFloat fontSize = 45;
 
 - (void)setPayloadOutput:(NSString *)payloadOutput
 {
-    _payloadOutput = payloadOutput;
-
-	_pagerTextLayer.string = payloadOutput;
-
-	float bodySize = fontSize;
-	NSFont * bodyFont = [NSFont fontWithName:@"Myriad Pro Bold" size:bodySize];
-	if (!bodyFont)
+    if ([self _displayMode] == kCountdownModeNone)
 	{
-		bodyFont = [NSFont boldSystemFontOfSize:bodySize];
+		_payloadOutput = @"";
+		_pagerTextLayer.string = @"";
 	}
+	else
+	{
+		_payloadOutput = payloadOutput;
 
-	bodySize = [self actualFontSizeForText:_payloadOutput withFont:bodyFont withOriginalSize:bodySize];
-	bodyFont = [NSFont fontWithName:bodyFont.fontName size:bodySize];
-	_pagerTextLayer.font = (__bridge CFTypeRef)(bodyFont);
-	_pagerTextLayer.fontSize = bodySize;
+		_pagerTextLayer.string = payloadOutput;
+
+		float bodySize = fontSize;
+		NSFont * bodyFont = [NSFont fontWithName:@"Myriad Pro Bold" size:bodySize];
+		if (!bodyFont)
+		{
+			bodyFont = [NSFont boldSystemFontOfSize:bodySize];
+		}
+
+		bodySize = [self actualFontSizeForText:_payloadOutput withFont:bodyFont withOriginalSize:bodySize];
+		bodyFont = [NSFont fontWithName:bodyFont.fontName size:bodySize];
+		_pagerTextLayer.font = (__bridge CFTypeRef)(bodyFont);
+		_pagerTextLayer.fontSize = bodySize;
+
+		if ([self _displayMode] == kCountdownModeNormal)
+		{
+			_pagerTextLayer.alignmentMode = kCAAlignmentCenter;
+		}
+		else if ([self _displayMode] == kCountdownModeStage)
+		{
+			_pagerTextLayer.alignmentMode = kCAAlignmentLeft;
+		}
+	}
 }
 
 
