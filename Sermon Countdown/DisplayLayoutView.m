@@ -26,26 +26,6 @@
 
 @implementation DisplayView
 
-- (id)initWithCoder:(NSCoder *)coder
-{
-	self = [super initWithCoder:coder];
-	if (self)
-	{
-		_imageView = [[NSImageView alloc] initWithFrame:self.bounds];
-		[self addSubview:_imageView];
-		_imageView.autoresizingMask = NSViewWidthSizable|NSViewHeightSizable;
-
-		_displayPopup = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(10, 10, self.bounds.size.width - 20, 22)];
-		[self addSubview:_displayPopup];
-		_displayPopup.autoresizingMask = NSViewMaxYMargin|NSViewWidthSizable;
-
-		[_displayPopup addItemsWithTitles:@[@"None", @"Stage", @"Normal"]];
-		[_displayPopup setTarget:self];
-		[_displayPopup setAction:@selector(popoverChanged:)];
-	}
-	return self;
-}
-
 - (id)initWithFrame:(NSRect)frameRect
 {
 	self = [super initWithFrame:frameRect];
@@ -209,7 +189,6 @@
 		[[NSBezierPath bezierPathWithRect:translatedScreenRect] stroke];
 
 		DisplayView * view = [_displayViews objectAtIndex:screenIndex];
-		//view.frame = NSMakeRect(translatedScreenRect.origin.x + 2, translatedScreenRect.origin.y + 2, translatedScreenRect.size.width - 4, translatedScreenRect.size.height - 4);
 		view.frame = translatedScreenRect;
 
 		screenIndex++;
@@ -252,11 +231,7 @@
 - (CGSize)scaledSizeForScreens
 {
 	CGSize currentSize = [self fullNormalizedActualPixelSizeOfScreens].size;
-	float viewScaleRatio = currentSize.width / (self.bounds.size.width - 20);
-	if ((currentSize.height / viewScaleRatio) > (self.bounds.size.height - 20))
-	{
-		viewScaleRatio = currentSize.height / (self.bounds.size.height - 20);
-	}
+	CGFloat viewScaleRatio = [self screenDrawScaleRatio];
 
 	currentSize.width = currentSize.width / viewScaleRatio;
 	currentSize.height = currentSize.height / viewScaleRatio;
