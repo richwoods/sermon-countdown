@@ -670,15 +670,16 @@
         </menu>
         <window title="Sermon Countdown" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="429" height="409"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="contentRect" x="335" y="390" width="827" height="740"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <value key="minSize" type="size" width="429" height="409"/>
+            <value key="maxSize" type="size" width="900" height="800"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="429" height="409"/>
+                <rect key="frame" x="0.0" y="0.0" width="827" height="740"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tC5-c3-zhp">
-                        <rect key="frame" x="125" y="59" width="54" height="38"/>
+                        <rect key="frame" x="325" y="59" width="54" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="WxV-dt-Ecp"/>
                             <constraint firstAttribute="width" constant="54" id="wIS-Dj-zIr"/>
@@ -690,7 +691,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="InO-Eg-b24">
-                        <rect key="frame" x="187" y="59" width="54" height="38"/>
+                        <rect key="frame" x="387" y="59" width="54" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="2Ow-TV-olr"/>
                             <constraint firstAttribute="width" constant="54" id="VG5-p2-v1Q"/>
@@ -702,7 +703,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-rW-yjR">
-                        <rect key="frame" x="249" y="59" width="54" height="38"/>
+                        <rect key="frame" x="449" y="59" width="54" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="jUc-Wk-3SA"/>
                             <constraint firstAttribute="width" constant="54" id="s83-HU-cce"/>
@@ -714,7 +715,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Yl-fL-64i">
-                        <rect key="frame" x="131" y="105" width="42" height="17"/>
+                        <rect key="frame" x="331" y="105" width="42" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="38" id="0WA-DJ-ZeB"/>
                             <constraint firstAttribute="height" constant="17" id="Yfj-lE-PfZ"/>
@@ -726,7 +727,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pep-TP-I6S">
-                        <rect key="frame" x="196" y="105" width="36" height="17"/>
+                        <rect key="frame" x="396" y="105" width="36" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="Deg-D8-HMF"/>
                             <constraint firstAttribute="height" constant="17" id="fHs-gB-NQg"/>
@@ -738,7 +739,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A1X-Zh-RcN">
-                        <rect key="frame" x="259" y="105" width="34" height="17"/>
+                        <rect key="frame" x="459" y="105" width="34" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="A4e-Ot-E3k"/>
                             <constraint firstAttribute="height" constant="17" id="xCe-TP-6NB"/>
@@ -750,7 +751,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-5P-PiD">
-                        <rect key="frame" x="136" y="13" width="150" height="32"/>
+                        <rect key="frame" x="335" y="13" width="150" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="rB6-rL-WEK"/>
                             <constraint firstAttribute="width" constant="138" id="zBw-SZ-Fhg"/>
@@ -764,7 +765,7 @@
                         </connections>
                     </button>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="uSr-K4-5Dd" customClass="DisplayLayoutView">
-                        <rect key="frame" x="0.0" y="130" width="429" height="279"/>
+                        <rect key="frame" x="0.0" y="130" width="827" height="610"/>
                     </customView>
                 </subviews>
                 <constraints>
@@ -788,7 +789,7 @@
                     <constraint firstItem="i0i-5P-PiD" firstAttribute="top" secondItem="tC5-c3-zhp" secondAttribute="bottom" constant="18" id="vch-V7-NpH"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="338.5" y="390.5"/>
+            <point key="canvasLocation" x="537.5" y="556"/>
         </window>
     </objects>
 </document>

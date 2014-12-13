@@ -185,6 +185,8 @@
 	for (NSScreen * screen in [NSScreen screens])
 	{
 		NSRect translatedScreenRect = NSMakeRect([self centerMonitorPoint].x + (screen.frame.origin.x / [self screenDrawScaleRatio]), [self centerMonitorPoint].y + (screen.frame.origin.y / [self screenDrawScaleRatio]), screen.frame.size.width / [self screenDrawScaleRatio], screen.frame.size.height / [self screenDrawScaleRatio]);
+		translatedScreenRect.origin.x = translatedScreenRect.origin.x + [self _xOffset];
+		translatedScreenRect.origin.y = translatedScreenRect.origin.y + [self _yOffset];
 
 		[[NSBezierPath bezierPathWithRect:translatedScreenRect] stroke];
 
@@ -212,9 +214,50 @@
 	centerMonitorSize.width = centerMonitorSize.width / [self screenDrawScaleRatio];
 	centerMonitorSize.height = centerMonitorSize.height / [self screenDrawScaleRatio];
 
-	return NSMakePoint([self centerPoint].x - (centerMonitorSize.width / 2), [self centerPoint].y - (centerMonitorSize.height / 2));
+	return NSMakePoint(0 - ([self _minimumPointXOrigin] / [self screenDrawScaleRatio]), 0 - ([self _minimumPointYOrigin] / [self screenDrawScaleRatio]));
 }
 
+- (CGFloat)_minimumPointXOrigin
+{
+	NSScreen * firstScreen = [[NSScreen screens] firstObject];
+	CGFloat xPos = firstScreen.frame.origin.x;
+	for (NSScreen * scr in [NSScreen screens])
+	{
+		if (scr.frame.origin.x < xPos)
+		{
+			xPos = scr.frame.origin.x;
+		}
+	}
+	return xPos;
+}
+
+- (CGFloat)_minimumPointYOrigin
+{
+	NSScreen * firstScreen = [[NSScreen screens] firstObject];
+	CGFloat yPos = firstScreen.frame.origin.y;
+	for (NSScreen * scr in [NSScreen screens])
+	{
+		if (scr.frame.origin.y < yPos)
+		{
+			yPos = scr.frame.origin.x;
+		}
+	}
+	return yPos;
+}
+
+- (CGFloat)_xOffset
+{
+	CGFloat scaledScreenWidth = ([self fullNormalizedActualPixelSizeOfScreens].size.width / [self screenDrawScaleRatio]);
+
+	return (self.bounds.size.width - scaledScreenWidth) / 2;
+}
+
+- (CGFloat)_yOffset
+{
+	CGFloat scaledScreenHeight = ([self fullNormalizedActualPixelSizeOfScreens].size.height / [self screenDrawScaleRatio]);
+
+	return (self.bounds.size.height - scaledScreenHeight) / 2;
+}
 
 - (NSRect)fullNormalizedActualPixelSizeOfScreens
 {
